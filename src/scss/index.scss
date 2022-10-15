@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**************************** Colors ****************************/
+@import './colors.scss';
+
+/*********************** Variables *********************/
+@import './variables.scss';
+
+/*********************** Layouts *******************/
+@import 'layouts/dashboard/dashboard.scss';
+
+/********************** Components *******************/
+@import 'components/Header/Header.scss';
+
+@import 'components/Sidebar/Sidebar.scss';
+
+@import 'components/Searchbar/Searchbar.scss';
+
+/*********************** Pages ***********************/
+@import 'pages/Auth/Auth.scss';
+@import 'pages/Home/Home.scss';
+

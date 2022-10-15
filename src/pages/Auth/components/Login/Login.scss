@@ -1,0 +1,49 @@
+.Login {
+  width: 80%;
+  display: grid;
+  place-items: center;
+  margin-top: 100px;
+  h2 {
+    font-size: 1.8em !important;
+  }
+
+  &__input {
+    &_label {
+      font-size: 0.8em !important;
+      margin-top: 1.5em !important;
+      margin-bottom: 0.5em !important;
+    }
+  }
+
+  &__forgot {
+    width: 100%;
+    text-align: right;
+    font-size: 0.75em;
+    color: $new-blue-bonum;
+    margin: 1em 0;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__icon {
+    width: 1.5em !important;
+    height: 1.5em !important;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  @media (max-width: 820px) {
+    width: 80%;
+  }
+}
+
+.login-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}

@@ -1,0 +1,37 @@
+.Sidebar {
+
+  &__logo {
+    width: 80%;
+    margin-bottom: 1em;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__button.chakra-button {
+    width: 100%;
+    justify-content: start;
+    padding: 1.5em;
+    border-radius: 1em;
+    padding-left: 0;
+    font-size: 0.8em;
+    margin-bottom: 1em;
+    &:hover {
+      background-color: $blue-bonum-transparent;
+      color: $blue-bonum;
+    }
+
+    &::selection {
+      border: 1px solid transparent;
+    }
+
+    .chakra-button__icon {
+      margin: 0 1em;
+    }
+  }
+}
+
+.ant-menu-sub.ant-menu-inline {
+  background: transparent !important;
+}
