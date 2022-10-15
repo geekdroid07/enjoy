@@ -32,7 +32,7 @@ function Header() {
 
   return (
     <div className="Header">
-      <div className="Header__info">
+      <div className="Header__info w-50">
         <Menu>
           <MenuButton rightIcon={<NotAllowedIcon />}>
             <Avatar />

@@ -4,12 +4,13 @@ import { getFirestore } from 'firebase/firestore';
 import { getStorage } from 'firebase/storage';
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCdQF5lrTjEsnooERe2PyPgw032rvJpdkk",
-  authDomain: "bonum-admins.firebaseapp.com",
-  projectId: "bonum-admins",
-  storageBucket: "bonum-admins.appspot.com",
-  messagingSenderId: "879077123868",
-  appId: "1:879077123868:web:f855313d42bacfbd1d7cd9"
+  apiKey: "AIzaSyCeNEFTLsckkCDf_lP2exGq_Oxh1AZR31Q",
+  authDomain: "enjoy-49209.firebaseapp.com",
+  projectId: "enjoy-49209",
+  storageBucket: "enjoy-49209.appspot.com",
+  messagingSenderId: "192818746777",
+  appId: "1:192818746777:web:e4051ac9843a9e21d1ef08",
+  measurementId: "G-0NZDB8N5T3"
 };
 
 export function translateFirebaseErrors(firebaseError) {

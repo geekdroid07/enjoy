@@ -26,9 +26,9 @@ function Sidebar() {
             label: <Button
               className="Sidebar__button"
               leftIcon={<RiUserVoiceFill />}
-              onClick={() => navigate('/coaches')}
+              onClick={() => navigate('/managers')}
             >
-              Coaches
+              Gestores soc.
             </Button>
           },
           {
@@ -36,9 +36,9 @@ function Sidebar() {
             label: <Button
               className="Sidebar__button"
               leftIcon={<RiUser3Fill />}
-              onClick={() => navigate('/coachees')}
+              onClick={() => navigate('/influencers')}
             >
-              Coachees
+              Influencers
             </Button>
           },
           {
@@ -46,68 +46,11 @@ function Sidebar() {
             label: <Button
               className="Sidebar__button"
               leftIcon={<RiUser3Fill />}
-              onClick={() => navigate('/focusareas')}
+              onClick={() => navigate('/members')}
             >
-              Areas de foco
+              Miembros
             </Button>
-          },
-          {
-            key: 3,
-            label: <Button
-              className="Sidebar__button"
-              leftIcon={<RiBuilding2Fill />}
-              onClick={() => navigate('/companies')}
-            >
-              Companies
-            </Button>,
-            children: [
-              {
-                style: { background: 'transparent' },
-                key: 4,
-                label: <Button
-                  className="Sidebar__button"
-                  leftIcon={<RiBuilding2Fill />}
-                  onClick={() => navigate('/cohorts')}
-                >
-                  Cohort
-                </Button>
-              }
-            ]
-          },
-          {
-            key: 5,
-            label: <Button
-              className="Sidebar__button"
-              leftIcon={<RiUser3Fill />}
-              onClick={() => navigate('/admins')}
-            >
-              Configuracion
-            </Button>,
-            children: [
-              {
-                style: { background: 'transparent' },
-                key: 6,
-                label: <Button
-                  className="Sidebar__button"
-                  leftIcon={<RiBuilding2Fill />}
-                  onClick={() => navigate('/admins')}
-                >
-                  Admins
-                </Button>
-              },
-              {
-                style: { background: 'transparent' },
-                key: 7,
-                label: <Button
-                  className="Sidebar__button"
-                  leftIcon={<RiBuilding2Fill />}
-                  onClick={() => navigate('/evaluations')}
-                >
-                  Evaluations
-                </Button>
-              }
-            ]
-          },
+          }
         ]}
       ></Menu>
 

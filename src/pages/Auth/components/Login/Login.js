@@ -73,15 +73,8 @@ function Login() {
               formValues.email.toLowerCase(),
               formValues.password
             );
-            // const { data: userData } = await getUserApi(user.uid);
-            // const info = await getDoc(doc(firestore, 'users', user.uid));
-            // if (!userData || (userData && userData.Role !== 'superadmin')) {
-            //   displayToast('No estas autorizado', 'error');
-            //   signOut(auth);
-            //   return;
-            // }
-
-            // dispatch(modifyUser(firebaseUser(user, info.data())));
+            const info = await getDoc(doc(firestore, 'users', user.uid));
+            dispatch(modifyUser(firebaseUser(user, info.data())));
           } else {
             await sendPasswordResetEmail(auth, formValues.email);
             displayToast(

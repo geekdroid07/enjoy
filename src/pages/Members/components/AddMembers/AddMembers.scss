@@ -1,0 +1,17 @@
+.Add {
+  &__button {
+    margin-top: 1em;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  .Add {
+      display: flex;
+      flex-direction: column;
+  }
+}
+
+.checkedfocusarea {
+  width: 50px !important;
+}
