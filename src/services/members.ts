@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { loadAbort } from '../utilities';
 
-const route = process.env.REACT_APP_API_URL + 'admin';
+const route = process.env.REACT_APP_API_URL + 'miembros?populate=*';
 
 // eslint-disable-next-line import/prefer-default-export
 export const post = (data) => {

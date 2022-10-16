@@ -54,7 +54,7 @@ const TypeCell: React.FC<EditableCellProps> = ({
 
 let searchInput = null;
 
-export default function BaseTable<T extends BaseModel>({ originData, columns, service = null, loading = false, actions = {}, addTitle = "add" }: { originData: T[], service: any, columns: any[], loading: boolean, actions?: any, addTitle?: string }) {
+export default function BaseTable<T extends BaseModel>({ originData, columns, service = null, loading = false, actions = {}, addTitle = "add", onChange = null }: { originData: T[], service: any, columns: any[], loading: boolean, actions?: any, addTitle?: string, onChange }) {
 
   const [form] = Form.useForm();
   const [data, setData] = useState(originData);
@@ -258,6 +258,7 @@ export default function BaseTable<T extends BaseModel>({ originData, columns, se
       <Form form={form} component={false}>
         <Table
           loading={loading}
+          onChange={onChange}
           components={{
             body: {
               cell: TypeCell,
