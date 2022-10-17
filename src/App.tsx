@@ -28,7 +28,6 @@ function App() {
 
   useEffect(() => {
     onAuthStateChanged(auth, async (firebaseUser) => {
-      console.log('firebaseUser', firebaseUser);
       if (firebaseUser) {
 
         const info = await getDoc(doc(firestore, "users", firebaseUser.uid));

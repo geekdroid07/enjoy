@@ -19,15 +19,32 @@ function Coachees() {
   const { loading, callEndpoint } = useFetchAndLoad()
 
   const [data, setData] = useState([]);
+  const [dataAfterRender, setDataAfterRender] = useState([]);
 
   const getData = async () => {
     const { data } = await callEndpoint(getAll());
     setData(data.data);
+    AfterRenderData(data.data);
   }
 
   useEffect(() => {
     getData();
   }, []);
+
+  const AfterRenderData = (data) => {
+    setDataAfterRender([...data.map(x => {
+      let total = 0;
+      const activeMembers = x.Miembros.filter(x => x.estado)
+      for (const member of activeMembers) {
+        total += MEMBERSHIP
+      }
+      return {
+        ...x,
+        amount: total / 2
+      }
+    })]);
+
+  }
 
   const columns = [
     {
@@ -50,12 +67,13 @@ function Coachees() {
         return total / 2
       },
     }
-  ]
+  ];
+
   return (
     <div className="focusAreas">
       <CSVLink
         filename={"Influencers.csv"}
-        data={data}
+        data={dataAfterRender}
         className="btn btn-primary"
         onClick={() => { }}
       >
@@ -66,7 +84,7 @@ function Coachees() {
         <BaseTable
           loading={loading}
           originData={data}
-          onChange={console.log}
+          onChange={(e) => console.log(e)}
           columns={columns}
           addTitle={""}
           service={influencersService} />

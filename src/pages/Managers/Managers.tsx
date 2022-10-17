@@ -19,10 +19,27 @@ function Managers() {
   const { loading, callEndpoint } = useFetchAndLoad()
 
   const [data, setData] = useState([]);
+  const [dataAfterRender, setDataAfterRender] = useState([]);
 
   const getData = async () => {
     const { data } = await callEndpoint(getAll());
     setData(data.data);
+    AfterRenderData(data.data);
+  }
+
+  const AfterRenderData = (data) => {
+    setDataAfterRender([...data.map(x => {
+      let total = 0;
+      for (const influencer of x.Influencers) {
+        const membersCalc: number = calcMembers(influencer.Miembros)
+        total += membersCalc * 0.15;
+      }
+      return {
+        ...x,
+        amount: total
+      }
+    })]);
+
   }
 
   useEffect(() => {
@@ -66,7 +83,7 @@ function Managers() {
     <div className="focusAreas">
       <CSVLink
         filename={"Managers.csv"}
-        data={data}
+        data={dataAfterRender}
         className="btn btn-primary"
         onClick={() => { }}
       >
